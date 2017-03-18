@@ -58,7 +58,7 @@ function getRandomInt(min, max) {
 }
 
 function checkNeighbour(x1, y1){
-	var adjacent = new Array[6];
+	var adjacent = new Array(6);
 	var counter = 0;
 	
 	for(var a = x1-1; a <= x1+1; a++){
