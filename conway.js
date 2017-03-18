@@ -1,4 +1,4 @@
-function Conway(){
+function Conway(map){
 	
 	var nCount = new Array[this.width];
 	for(var i = 0; i < this.width; i++){
@@ -17,7 +17,11 @@ function Conway(){
 	
 	for(var a = 0; x < width; x++){
 		for(var b = 0; y < height; y++){
-			
-			}
+			if(nCount[a][b] < 2 || nCount > 2){ // don't forget to add land qualifier
+				map.cells[a][b].alive = false;
+			}else {
+				map.cells[a][b].alive = true;
+			}	
 		}
+	}
 }
