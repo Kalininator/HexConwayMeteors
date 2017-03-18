@@ -1,6 +1,6 @@
 function Map(width, height){
 	this.cells = new Array(width);
-	this.nCount = new Array[width];
+	this.nCount = new Array(width);
 	this.width = width;
 	this.height = height;
 	for(var i = 0; i < width; i ++){
@@ -27,7 +27,8 @@ Map.prototype = {
 				x = i * (size * 1.5);
 				y += size;
 				x += size;
-				ctx.fillStyle = "rgb(" + this.cells[i][j].r + "," + this.cells[i][j].g + "," + this.cells[i][j].b + ")"
+				//ctx.fillStyle = "rgb(" + this.cells[i][j].r + "," + this.cells[i][j].g + "," + this.cells[i][j].b + ")"
+				ctx.fillStyle = this.cells[i][j].color;
 				drawHex(size,x,y);
 			}
 		}
@@ -54,7 +55,7 @@ function checkNeighbour(x1, y1){
 	
 	for(var a = x1-1; a <= x1+1; a++){
 		for(var b = y1-1; b <= y1+1; b++){
-			if(!(a == x1-1 &&b = y1+1)||!(a == x1 && y1 == b)||!(a == x1+1 && b == y1-1)){
+			if(!(a == x1-1 && b == y1+1)||!(a == x1 && y1 == b)||!(a == x1+1 && b == y1-1)){
 				adjacent[counter] = this.cells[this.width%a][this.height%b];
 				counter++;
 			}
