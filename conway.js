@@ -18,7 +18,7 @@ function Conway(map){
 	}
 	for(var a = 0; a < map.width; a++){
 		for(var b = 0; b < map.height; b++){
-			if((nCount[a][b] == 2 || nCount[a][b] == 3) && map.landmap.cells[a][b] == 1){ // don't forget to add land qualifier
+			if((nCount[a][b] == 2) && map.landmap.cells[a][b] == 1){ // don't forget to add land qualifier
 				map.cells[a][b].alive = true;
 			}else {
 				map.cells[a][b].alive = false;
