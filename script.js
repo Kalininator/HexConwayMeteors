@@ -21,7 +21,6 @@ $(function(){
 
 function loop(){
 	var coord = coordView(39.733375, -104.988225);
-	
 	Spawner(map, "MediumSlateBlue", coord.x, coord.y)
 	Conway(map);
 	ctx.clearRect(0,0,c.width,c.height);

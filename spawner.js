@@ -4,5 +4,6 @@ function Spawner(map, color, x, y){
 	for(var i = 0; i < map.getRandomInt(0,7); i++){
 		var a = map.getRandomInt(0,7)
 		map.cells[xArr[a] >= 0 ? xArr[a] % map.width : map.width + xArr[a]][yArr[b] >= 0 ? yArr[b] % map.height : map.height + yArr[b]].alive = true;
+		map.cells[xArr[a] >= 0 ? xArr[a] % map.width : map.width + xArr[a]][yArr[b] >= 0 ? yArr[b] % map.height : map.height + yArr[b]].color = this.color;
 	}
 }
