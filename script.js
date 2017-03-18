@@ -11,7 +11,7 @@ $(function(){
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
-	var i = 100;
+	var i = 200;
 	
 	
 
@@ -21,7 +21,9 @@ $(function(){
 	
 	
 	addSpawnerLocation(43.107827, -8.376841);
-	addSpawnerLocation(13.234328, 18.709635);
+	addSpawnerLocation(19.289797, 28.736475);
+	addSpawnerLocation(22.278559, -4.980361	);
+	addSpawnerLocation(-19.632988, 24.897368);
 	landmap.draw();
 	map.draw();
 	
@@ -41,18 +43,19 @@ function addSpawnerLocation(lat,lng){
 
 function loop(){
 	
-	
+	console.log("tick");
 	
 	// console.log(map.width);
 	// console.log(map.width - coord.x);
 	
 	for(var i = 0; i < coords.length; i += !""){
 		map.cells[coords[i].x][coords[i].y].alive = true;
-		map.cells[coords[i].x][coords[i].y].color = "MediumSlateBlue";
-		Spawner(map, "MediumSlateBlue", coords[i].x, coords[i].y);
+		var c = map.cells[coords[i].x][coords[i].y].colors[getRandomInt(0,4)];
+		map.cells[coords[i].x][coords[i].y].color = c;
+		Spawner(map, c, coords[i].x, coords[i].y);
 	}
 	
-	Conway(map);
+	map = Conway(map);
 	
 	for(var i = 0; i < coords.length; i += !""){
 		map.cells[coords[i].x,coords[i].y].alive = true;
