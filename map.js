@@ -64,7 +64,8 @@ function checkNeighbour(x1, y1){
 	for(var a = x1-1; a <= x1+1; a++){
 		for(var b = y1-1; b <= y1+1; b++){
 			if(!(a == x1-1 && b == y1+1)||!(a == x1 && y1 == b)||!(a == x1+1 && b == y1-1)){
-				adjacent[counter] = this.cells[this.width%a][this.height%b];
+				if(a > 0)
+				adjacent[counter] = this.cells[a%this.width][b%this.height];
 				counter++;
 			}
 		}
