@@ -16,7 +16,7 @@ $(function(){
 	map.draw();
 	
 	$("#canvas").click(function(){
-		conway(map);
+		Conway(map);
 	});
 });
 
