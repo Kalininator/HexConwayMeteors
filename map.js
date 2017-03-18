@@ -18,7 +18,7 @@ Map.prototype = {
 				if(i % 2 == 0){
 					y = j * (size * Math.sqrt(3)) ;
 				}else{
-					y = j * (size * Math.sqrt(3))  + (size * Math.sin(Math.PI/3));
+					y = j * (size * Math.sqrt(3))  + (size * Math.sqrt(3) * 0.5);
 				}
 				
 				x = i * (size * 1.5);
@@ -33,7 +33,7 @@ Map.prototype = {
 
 function drawHex(size,x,y){
 	ctx.beginPath();
-	ctx.moveTo (x +  size * Math.cos(0), y +  size *  Math.sin(0));          
+	ctx.moveTo (x +  size, y);          
 	for (var i = 1; i <= 6;i ++) {
 		ctx.lineTo (x + size * Math.cos(i * 2 * Math.PI / 6), y + size * Math.sin(i * 2 * Math.PI / 6));
 	}
