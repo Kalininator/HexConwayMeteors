@@ -8,7 +8,7 @@ $(function(){
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
-	var i = 300;
+	var i = 200;
 	map = new Map(Math.round(i * 2.3),i);
 	landmap = new LandMap(Math.round(i * 2.3),i);
 	landmap.draw();

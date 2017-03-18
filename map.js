@@ -14,10 +14,11 @@ function Map(width, height){
 }
 Map.prototype = {
 	draw: function(){
+		
+		
 		for(var i = 0; i < this.width; i ++){
 			for(var j = 0; j < this.height; j ++){
 				var x, y;
-				var size = 5;
 				if(i % 2 == 0){
 					y = j * (size * Math.sqrt(3)) ;
 				}else{
