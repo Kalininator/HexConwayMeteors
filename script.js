@@ -14,4 +14,17 @@ $(function(){
 	map = new Map(Math.round(i * 2.3),i,landmap);
 	landmap.draw();
 	map.draw();
+	
+	$("#canvas").click(function(){
+		console.log("ayyyyy");
+	});
 });
+
+function coordView(lat,lng){
+	var screenX = ((lng + 180) * (c.width  / 360));
+	var screenY = (((lat * -1) + 90) * (c.height/ 180));
+	ctx.beginPath();
+	ctx.arc(screenX,screenY,20,0,2*Math.PI);
+	ctx.fill();
+	console.log(screenX + "," + screenY);
+}
