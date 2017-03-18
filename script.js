@@ -27,7 +27,7 @@ function loop(){
 	console.log(coord);
 	map.cells[coord.x, coord.y].alive = true;
 	map.cells[coord.x, coord.y].color = "MediumSlateBlue";
-	Spawner(map, "MediumSlateBlue", coord.x, coord.y)
+	Spawner(map, "MediumSlateBlue", coord.x, coord.y);
 	Conway(map);
 	ctx.clearRect(0,0,c.width,c.height);
 	landmap.draw();
