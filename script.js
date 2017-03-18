@@ -8,7 +8,7 @@ $(function(){
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
-	var i = 100;
+	var i = 200;
 	
 	landmap = new LandMap(Math.round(i * 2.3),i);
 	map = new Map(Math.round(i * 2.3),i,landmap);
@@ -21,7 +21,15 @@ $(function(){
 		landmap.draw();
 		map.draw();
 	});
+	setInterval(loop,1000/3);
 });
+
+function loop(){
+	Conway(map);
+	ctx.clearRect(0,0,c.width,c.height);
+	landmap.draw();
+	map.draw();
+}
 
 function coordView(lat,lng){
 	var screenX = ((lng + 180) * (c.width  / 360));
