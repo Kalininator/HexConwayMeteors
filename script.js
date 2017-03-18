@@ -17,6 +17,9 @@ $(function(){
 	
 	$("#canvas").click(function(){
 		Conway(map);
+		ctx.clearRect(0,0,c.width,c.height);
+		landmap.draw();
+		map.draw();
 	});
 });
 
