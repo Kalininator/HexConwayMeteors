@@ -57,4 +57,6 @@ function checkNeighbour(x, y){
 			}
 		}
 	}
+	
+	return adjacent;
 }
