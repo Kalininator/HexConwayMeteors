@@ -31,13 +31,15 @@ function loop(){
 	map.draw();
 }
 
+
+
 function coordView(lat,lng){
 	var screenX = ((lng + 180) * (c.width  / 360));
 	var screenY = (((lat * -1) + 90) * ((Math.sqrt(3) * ((window.innerWidth ) / ((map.width + 1) * 1.5)) * map.height)/ 180));
-	ctx.beginPath();
-	ctx.arc(screenX,screenY,20,0,2*Math.PI);
-	ctx.fill();
-	console.log(screenX + "," + screenY);
+	// ctx.beginPath();
+	// ctx.arc(screenX,screenY,20,0,2*Math.PI);
+	// ctx.fill();
+	return {x:screenX,y:screenY};
 }
 
 
