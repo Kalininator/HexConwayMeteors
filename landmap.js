@@ -29,7 +29,6 @@ function LandMap(width,height){
 			}
 		}
 	}
-	console.log(this.cells);
 }
 LandMap.prototype = {
 	draw: function(){
