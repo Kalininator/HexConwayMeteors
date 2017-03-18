@@ -1,13 +1,14 @@
-function Map(width, height){
+function Map(width, height,landmap){
 	this.cells = new Array(width);
 	this.nCount = new Array(width);
 	this.width = width;
+	this.landmap = landmap;
 	this.height = height;
 	for(var i = 0; i < width; i ++){
 		this.cells[i] = new Array(height);
 		this.nCount[i] = new Array(height);
 		for(var j = 0; j < height; j ++){
-			this.cells[i][j] = new Cell(getRandomInt(0,255),getRandomInt(0,255),getRandomInt(0,255));
+			this.cells[i][j] = new Cell();
 		}
 	}
 	
@@ -30,20 +31,20 @@ Map.prototype = {
 				y += size;
 				x += size;
 				//ctx.fillStyle = "rgb(" + this.cells[i][j].r + "," + this.cells[i][j].g + "," + this.cells[i][j].b + ")"
-				if(this.cells[i][j].alive == true){
+				if(this.cells[i][j].alive && this.landmap.cells[i][j]){
 					ctx.fillStyle = this.cells[i][j].color;
-				} else{
-					ctx.fillStyle = "Black";
+					drawHex(size,x,y,0.7);
 				}
 				
-				drawHex(size,x,y);
 			}
 		}
 	}
 };
 
-function drawHex(size,x,y){
+function drawHex(size,x,y,i){
 	ctx.beginPath();
+	size = size * i;
+	
 	ctx.moveTo (x +  size, y);          
 	for (var i = 1; i <= 6;i ++) {
 		ctx.lineTo (x + size * Math.cos(i * 2 * Math.PI / 6), y + size * Math.sin(i * 2 * Math.PI / 6));

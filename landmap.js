@@ -53,7 +53,8 @@ LandMap.prototype = {
 					ctx.fillStyle = "Blue";
 				}
 				
-				drawHex(size,x,y);
+				drawHex(size,x,y,1);
+				
 			}
 		}
 	}
@@ -67,12 +68,3 @@ function getPixelRGB(data,x,y,width,height){
 	return {r:red,g:green,b:blue,a:alpha};
 }
 
-function drawHex(size,x,y){
-	ctx.beginPath();
-	ctx.moveTo (x +  size, y);          
-	for (var i = 1; i <= 6;i ++) {
-		ctx.lineTo (x + size * Math.cos(i * 2 * Math.PI / 6), y + size * Math.sin(i * 2 * Math.PI / 6));
-	}
-	ctx.lineWidth = 1;
-	ctx.fill();
-}
