@@ -1,13 +1,16 @@
 function Map(width, height){
 	this.cells = new Array(width);
+	this.nCount = new Array[width];
 	this.width = width;
 	this.height = height;
 	for(var i = 0; i < width; i ++){
 		this.cells[i] = new Array(height);
+		this.nCount[i] = new Array(height);
 		for(var j = 0; j < height; j ++){
 			this.cells[i][j] = new Cell(getRandomInt(0,255),getRandomInt(0,255),getRandomInt(0,255));
 		}
 	}
+	
 }
 Map.prototype = {
 	draw: function(){
@@ -45,13 +48,13 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function checkNeighbour(x, y){
-	var adjacent[6];
+function checkNeighbour(x1, y1){
+	var adjacent = new Array[6];
 	var counter = 0;
 	
-	for(var a = x-1; a <= x+1; a++){
-		for(var b = y-1; b <= y+1; b++){
-			if(!(a == x-1 &&b = y+1)||!(a == x && y == b)||!(a == x+1 && b == y-1)){
+	for(var a = x1-1; a <= x1+1; a++){
+		for(var b = y1-1; b <= y1+1; b++){
+			if(!(a == x1-1 &&b = y1+1)||!(a == x1 && y1 == b)||!(a == x1+1 && b == y1-1)){
 				adjacent[counter] = this.cells[this.width%a][this.height%b];
 				counter++;
 			}
@@ -59,4 +62,23 @@ function checkNeighbour(x, y){
 	}
 	
 	return adjacent;
+}
+
+function Conway(){
+	
+	var nCount = new Array[this.width];
+	for(var i = 0; i < this.width; i++){
+		nCount[i] = new Array[this.height];
+	}
+	for(var a = 0; x < width; x++){
+		for(var b = 0; y < height; y++){
+			var neighbourArr = checkNeighbour(a,b);
+			nCount[a][b] = 0;
+			for(var nC = 0; nC < 6; nC++){
+				if(neighbourArr[nC].alive == true){
+					nCount[a][b]++;
+				}
+			}
+		}
+	}
 }
