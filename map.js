@@ -44,3 +44,17 @@ function drawHex(size,x,y){
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function checkNeighbour(x, y){
+	var adjacent[6];
+	var counter = 0;
+	
+	for(var a = x-1; a <= x+1; a++){
+		for(var b = y-1; b <= y+1; b++){
+			if(!(a == x-1 &&b = y+1)||!(a == x && y == b)||!(a == x+1 && b == y-1)){
+				adjacent[counter] = this.cells[this.width%a][this.height%b];
+				counter++;
+			}
+		}
+	}
+}
