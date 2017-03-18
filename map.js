@@ -28,7 +28,12 @@ Map.prototype = {
 				y += size;
 				x += size;
 				//ctx.fillStyle = "rgb(" + this.cells[i][j].r + "," + this.cells[i][j].g + "," + this.cells[i][j].b + ")"
-				ctx.fillStyle = this.cells[i][j].color;
+				if(this.cells[i][j].alive == true){
+					ctx.fillStyle = this.cells[i][j].color;
+				} else{
+					ctx.fillStyle = "Black";
+				}
+				
 				drawHex(size,x,y);
 			}
 		}
@@ -81,5 +86,10 @@ function Conway(){
 				}
 			}
 		}
-	}
+	
+	for(var a = 0; x < width; x++){
+		for(var b = 0; y < height; y++){
+			
+			}
+		}
 }
