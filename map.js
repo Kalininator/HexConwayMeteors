@@ -15,6 +15,7 @@ function Map(width, height){
 Map.prototype = {
 	draw: function(){
 		
+		var size = (window.innerWidth ) / ((this.width + 1) * 1.5);
 		
 		for(var i = 0; i < this.width; i ++){
 			for(var j = 0; j < this.height; j ++){
