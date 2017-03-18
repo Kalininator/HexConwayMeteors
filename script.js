@@ -15,16 +15,14 @@ $(function(){
 	landmap.draw();
 	map.draw();
 	
-	$("#canvas").click(function(){
-		Conway(map);
-		ctx.clearRect(0,0,c.width,c.height);
-		landmap.draw();
-		map.draw();
-	});
+	
 	setInterval(loop,1000/3);
 });
 
 function loop(){
+	var coord = coordView(39.733375, -104.988225);
+	
+	Spawner(map, "MediumSlateBlue", coord.x, coord.y)
 	Conway(map);
 	ctx.clearRect(0,0,c.width,c.height);
 	landmap.draw();

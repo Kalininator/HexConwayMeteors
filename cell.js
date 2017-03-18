@@ -2,6 +2,9 @@ function Cell(){
 	this.colors = ["Crimson", "Gold", "LightSalmon", "MediumSlateBlue", "AliceBlue"];
 	//this.color = this.colors[getRandomInt(0,4)];
 	
+	this.alive = false;
+	
+	/*
 	if(Math.random() < 0.2){
 		this.alive = true;
 		this.color = this.colors[getRandomInt(0,4)];
@@ -9,6 +12,7 @@ function Cell(){
 		this.alive = false;
 		this.color = "Black";
 	}
+	*/
 	
 	//this.alive = true;
 }
