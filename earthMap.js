@@ -12,11 +12,21 @@ function generateEarthMap(height){
 	var data = imgctx.getImageData(0, 0, img.width, img.height);
 	
 	
-	console.log(getPixelRGB(data,20,200,img.width,img.height));
-	
-	
-	
-	console.log(data);
+	for(var i = 0; i < map.width; i ++){
+		for(var j = 0; j < map.height; j ++){
+			
+			var xscale = img.width / map.width;
+			var yscale = img.height / map.height;
+			
+			var pixel = getPixelRGB(data,Math.round(i*xscale),Math.round(j*yscale),img.width,img.height);
+			if(pixel.b == 255){
+				map.cells[i][j].color = map.cells[i][j].colors[0];
+			}else{
+				map.cells[i][j].color = map.cells[i][j].colors[1];
+			}
+		}
+	}
+	return map;
 }
 function getPixelRGB(data,x,y,width,height){
 	var red = data.data[((width * y) + x) * 4];
