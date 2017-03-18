@@ -21,6 +21,10 @@ $(function(){
 
 function loop(){
 	var coord = coordView(39.733375, -104.988225);
+	console.log(coord);
+	coord.x = Math.round(coord.x);
+	coord.y = Math.round(coord.y);
+	console.log(coord);
 	map.cells[coord.x, coord.y].alive = true;
 	map.cells[coord.x, coord.y].color = "MediumSlateBlue";
 	Spawner(map, "MediumSlateBlue", coord.x, coord.y)
