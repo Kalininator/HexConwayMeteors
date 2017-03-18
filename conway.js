@@ -14,7 +14,7 @@ function Conway(map){
 				}
 			}
 		}
-	
+	}
 	for(var a = 0; x < width; x++){
 		for(var b = 0; y < height; y++){
 			if(nCount[a][b] < 2 || nCount[a][b] > 2){ // don't forget to add land qualifier
