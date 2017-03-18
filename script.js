@@ -1,5 +1,6 @@
 var c, ctx;
 var WIDTH, HEIGHT;
+var map;
 
 $(function(){
 	//init
@@ -8,5 +9,8 @@ $(function(){
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
 	
-	ctx.fillRect(20,20,20,20);
+	map = new Map(20,20);
+	
+	map.draw();
+	
 });
