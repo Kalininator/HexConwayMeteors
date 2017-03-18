@@ -6,11 +6,12 @@ function Conway(map){
 	}
 	for(var a = 0; x < width; x++){
 		for(var b = 0; y < height; y++){
-			var neighbourArr = checkNeighbour(a,b);
+			var map.neighbourArr = checkNeighbour(a,b);
 			nCount[a][b] = 0;
 			for(var nC = 0; nC < 6; nC++){
-				if(neighbourArr[nC].alive == true){
+				if(map.neighbourArr[nC].alive == true){
 					nCount[a][b]++;
+					map.cells[a][b].color = map.neighbourArr[nC].color;
 				}
 			}
 		}
