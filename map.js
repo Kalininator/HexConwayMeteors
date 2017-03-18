@@ -1,5 +1,7 @@
 function Map(width, height){
 	this.cells = new Array(width);
+	this.width = width;
+	this.height = height;
 	for(var i = 0; i < width; i ++){
 		this.cells[i] = new Array(height);
 		for(var j = 0; j < height; j ++){
@@ -9,19 +11,21 @@ function Map(width, height){
 }
 Map.prototype = {
 	draw: function(){
-		for(var i = 0; i < 20; i ++){
-			for(var j = 0; j < 20; j ++){
+		for(var i = 0; i < this.width; i ++){
+			for(var j = 0; j < this.height; j ++){
 				var x, y;
+				var size = 5;
 				if(i % 2 == 0){
-					x = i * 30 + 20;
-					y = j * 35 + 20;
+					y = j * (size * Math.sqrt(3)) ;
 				}else{
-					x = i * 30 + 20;
-					y = j * 35 + 37;
+					y = j * (size * Math.sqrt(3))  + (size * Math.sin(Math.PI/3));
 				}
 				
+				x = i * (size * 1.5);
+				y += size;
+				x += size;
 				ctx.fillStyle = "rgb(" + this.cells[i][j].r + "," + this.cells[i][j].g + "," + this.cells[i][j].b + ")"
-				drawHex(20,x,y);
+				drawHex(size,x,y);
 			}
 		}
 	}

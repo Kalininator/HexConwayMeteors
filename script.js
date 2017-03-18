@@ -9,7 +9,7 @@ $(function(){
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
 	
-	map = new Map(20,20);
+	map = new Map(150,150);
 	
 	map.draw();
 	
