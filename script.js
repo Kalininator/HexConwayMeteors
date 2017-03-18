@@ -20,10 +20,14 @@ $(function(){
 	map = new Map(Math.round(i * 2.3),i,landmap);
 	
 	
-	addSpawnerLocation(43.107827, -8.376841);
-	addSpawnerLocation(19.289797, 28.736475);
-	addSpawnerLocation(22.278559, -4.980361	);
-	addSpawnerLocation(-19.632988, 24.897368);
+	addSpawnerLocation(35.539075, 139.580745);	// Tokyo
+	addSpawnerLocation(40.755671, -73.982191);	// New york city
+	addSpawnerLocation(-23.550443, -46.633423);	// Sao Paulo
+	addSpawnerLocation(55.755881, 37.617143);	// Moscow 
+	addSpawnerLocation(51.507341, -0.127671);	// London
+	addSpawnerLocation(31.230391, 121.473707);	// Shanghai
+	addSpawnerLocation(24.714856, 46.674914);	// Riyadh 
+	
 	landmap.draw();
 	map.draw();
 	
