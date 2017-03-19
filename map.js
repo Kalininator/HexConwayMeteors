@@ -32,7 +32,8 @@ Map.prototype = {
 				x += size;
 				//ctx.fillStyle = "rgb(" + this.cells[i][j].r + "," + this.cells[i][j].g + "," + this.cells[i][j].b + ")"
 				if(this.cells[i][j].alive && this.landmap.cells[i][j]){
-					ctx.fillStyle = this.cells[i][j].color;
+					// ctx.fillStyle = this.cells[i][j].color;
+					ctx.fillStyle = "white";
 					drawHex(size,x,y,0.7);
 				}
 				

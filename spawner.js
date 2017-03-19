@@ -1,4 +1,5 @@
 function Spawner(map, color, x, y){
+	// console.log(color);
 	var xArr = [x-1, x, x-1, x+1, x, x+1];
 	var yArr = [y-1, y-1, y, y, y+1, y+1];
 	var rand = getRandomInt(0,5);
@@ -8,6 +9,7 @@ function Spawner(map, color, x, y){
 		var ay = yArr[a] >= 0 ? yArr[a] % map.height : map.height + yArr[a];
 		//console.log(ax + "," + ay);
 		map.cells[ax][ay].alive = true;
-		map.cells[ax][ay].color = this.color;
+		// map.cells[ax][ay].color = color;
+		// console.log(map.cells[ax][ay].color);
 	}
 }

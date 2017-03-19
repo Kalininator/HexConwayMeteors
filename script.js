@@ -11,7 +11,7 @@ $(function(){
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
-	var i = 200;
+	var i = 100;
 	
 	
 
@@ -55,7 +55,7 @@ function loop(){
 	for(var i = 0; i < coords.length; i += !""){
 		map.cells[coords[i].x][coords[i].y].alive = true;
 		var c = map.cells[coords[i].x][coords[i].y].colors[getRandomInt(0,4)];
-		map.cells[coords[i].x][coords[i].y].color = c;
+		//map.cells[coords[i].x][coords[i].y].color = c;
 		Spawner(map, c, coords[i].x, coords[i].y);
 	}
 	
