@@ -27,6 +27,8 @@ $(function(){
 	addSpawnerLocation(51.507341, -0.127671);	// London
 	addSpawnerLocation(31.230391, 121.473707);	// Shanghai
 	addSpawnerLocation(24.714856, 46.674914);	// Riyadh 
+	addSpawnerLocation(-33.868928, 151.209345);	// Sydney
+	addSpawnerLocation(43.737470, -79.371324);	// Toronto
 	
 	landmap.draw();
 	map.draw();
@@ -47,7 +49,7 @@ function addSpawnerLocation(lat,lng){
 
 function loop(){
 	
-	console.log("tick");
+	//console.log("tick");
 	
 	// console.log(map.width);
 	// console.log(map.width - coord.x);
@@ -67,7 +69,7 @@ function loop(){
 	
 	
 	ctx.clearRect(0,0,c.width,c.height);
-	console.log("draw");
+	//console.log("draw");
 	landmap.draw();
 	map.draw();	
 }
