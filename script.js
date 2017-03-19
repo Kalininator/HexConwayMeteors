@@ -228,7 +228,7 @@ $(function(){
 	
 	addSpawnerLocation(35.539075, 139.580745);	// Tokyo
 	coordsC.push("LightSlateGray");
-	addSpawnerLocation(40.755671, -73.982191);	// New york city
+	addSpawnerLocation(40.788961, -74.844821);	// New york city
 	coordsC.push("Aqua");
 	addSpawnerLocation(-23.550443, -46.633423);	// Sao Paulo
 	coordsC.push("Lime");
