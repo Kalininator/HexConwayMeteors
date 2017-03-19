@@ -51,6 +51,8 @@ $(function(){
 	coordsC.push("White");
 	addSpawnerLocation(40.755671, -73.982191);	// New york city
 	coordsC.push("Aqua");
+	addSpawnerLocation(40.421363, -74.931097);	// New york city
+	coordsC.push("Aqua");
 	addSpawnerLocation(-23.550443, -46.633423);	// Sao Paulo
 	coordsC.push("Lime");
 	addSpawnerLocation(55.755881, 37.617143);	// Moscow 
@@ -65,10 +67,15 @@ $(function(){
 	coordsC.push("Darkblue");
 	addSpawnerLocation(53.541925, -113.491206);	// Edmonton
 	coordsC.push("Firebrick");
-	addSpawnerLocation(6.605115, 20.656842);	// Central African Republic
+	addSpawnerLocation(-13.524056, 28.154287);	// zambia
 	coordsC.push("DarkOrange");
 	addSpawnerLocation(-75.100459, 123.345904);	// Concordia Station
 	coordsC.push("White");
+	addSpawnerLocation(27.197235, 2.483790);	// Algeria
+	coordsC.push("Lime");
+	addSpawnerLocation(17.373867, 78.482229);	// Hyderia
+	coordsC.push("Darkblue");
+	
 	
 	landmap.draw();
 	map.draw();
