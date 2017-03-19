@@ -2,19 +2,28 @@ var c, ctx;
 var WIDTH, HEIGHT;
 var map,landmap,killgrid;
 var coords = [];
-var FPS = 3;
+var FPS = 4;
+
+var currentYear = 1900;
+var tick = 0;
+var tickMaxMeteor = 2;
+
 $(function(){
 	//init
 	
 	
+	$("#bottom").width = window.innerWidth;
+	$("#bottom").height = 200;
+	$("#main").width = window.innerWidth;
+	$("#main").height = window.innerHeight - 200;
 	
 	c = $("#canvas")[0];
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
-	c.height = window.innerHeight;
-	var i = 100;
-	
-	
+	console.log(window.innerHeight);
+	c.height = window.innerHeight - 200;
+	console.log(c.height);
+	var i = 200;
 
 	
 	landmap = new LandMap(Math.round(i * 2.3),i);
@@ -57,6 +66,10 @@ function getMousePos(canvas, evt) {
     };
 }
 
+function meteors(){
+	getMeteors($("#memebox")[0].value);
+}
+
 function addSpawnerLocation(lat,lng){
 	var coord = coordView(lat, lng);
 	coord.x = Math.round(coord.x);
@@ -68,6 +81,14 @@ function addSpawnerLocation(lat,lng){
 }
 
 function loop(){
+	$("#currentYearBox")[0].innerHTML = "Current Year: " + currentYear;
+	if(tick == tickMaxMeteor){
+		getMeteors(currentYear);
+		currentYear++;
+		tick = 0;
+	}else{
+		tick ++;
+	}
 	
 	
 	for(var i = 0; i < coords.length; i += !""){
@@ -104,6 +125,8 @@ function loop(){
 	for(var i = 0; i < killgrid.length; i += !""){
 		killgrid[i].fill(0);
 	}
+	
+	
 	
 	// window.setTimeout(loop,1000);
 }

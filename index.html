@@ -1,8 +1,7 @@
 <img id="earthimg" src="earth-map.gif" style="display:none;"/>
 <style>
-	* { margin:0; padding:0; }
-	html, body { width:100%; height:100%; }
-	#canvas { display:block; }
+	body { margin: 0; }
+	canvas {width:100%}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="map.js"></script>
@@ -11,5 +10,22 @@
 <script src="spawner.js"></script>
 <script src="landmap.js"></script>
 <script src="meteors.js"></script>
+<script src="meteordata.js"></script>
 <script src="script.js"></script>
+<body>
+<div id="main">
+
 <canvas id="canvas"></canvas>
+</div>
+
+<div id="bottom">
+	<center>
+		<div id="currentYearBox">Current Year: 1900</div>
+		<br/>
+		<input text="1880" type="text" id="memebox"></input>
+		<button onclick="meteors()">Death</button>
+		<br/>
+		
+	</center>
+</div>
+</body>

@@ -1,31 +1,45 @@
 function getMeteors(year){
 	
-	$.ajax({
-    url: "https://data.nasa.gov/resource/y77d-th95.json?year=" + year + "-01-01T00:00:00.000",
-    type: "GET",
-    data: {
-      "$limit" : 100,
-      "$$app_token" : "Fp2W83e1k4P0NbAB12BVfjtfv"
-    }
-	}).done(function(data) {
-	  alert("Retrieved " + data.length + " records from the dataset!");
-	  console.log(data);
-	  for(var i = 0; i < data.length; i += true){
-		  //console.log(data[i].reclat + "," + data[i].reclong);
-		  var coord = coordView(data[i].reclat,data[i].reclong);
+	// $.ajax({
+    // url: "https://data.nasa.gov/resource/y77d-th95.json?year=" + year + "-01-01T00:00:00.000",
+    // type: "GET",
+    // data: {
+      // "$limit" : 100,
+      // "$$app_token" : "Fp2W83e1k4P0NbAB12BVfjtfv"
+    // }
+	// }).done(function(data) {
+	  // alert("Retrieved " + data.length + " records from the dataset!");
+	  // console.log(data);
+	  // for(var i = 0; i < data.length; i += true){
+		  // console.log(data[i].reclat + "," + data[i].reclong);
+		  // var coord = coordView(data[i].reclat,data[i].reclong);
 		  // console.log(coord);
 		  // console.log(c.width + "," + c.height);
-		  if(coord.x < c.width && coord.x >= 0 && coord.y < c.height && coord.y >= 0){
+		  // if(coord.x < c.width && coord.x >= 0 && coord.y < c.height && coord.y >= 0){
 			  // console.log(":)");
-			  meteorStrike(coord.x,coord.y);
-		  }
+			  // meteorStrike(coord.x,coord.y);
+		  // }
 		  
 		  
-	  }
+	  // }
 	  
 	  // console.log(data);
-	});
-	
+	// });
+	var results = [];
+	for(var i = 0; i < meteordata.length; i ++){
+		if(meteordata[i].year == year){
+			results.push(meteordata[i]);
+			var coord = coordView(meteordata[i].reclat,meteordata[i].reclong);
+			// console.log(coord);
+			// console.log(c.width + "," + c.height);
+			if(coord.x < c.width && coord.x >= 0 && coord.y < c.height && coord.y >= 0){
+				// console.log(":)");
+				meteorStrike(coord.x,coord.y);
+			}
+		}
+	}
+	return results;
+	// console.log(results);
 }
 
 function meteorStrike(x,y){

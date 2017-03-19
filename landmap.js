@@ -33,7 +33,9 @@ function LandMap(width,height){
 LandMap.prototype = {
 	draw: function(){
 		
-		var size = (window.innerWidth ) / ((this.width + 1) * 1.5);
+		var sizex = (c.width) / ((this.width + 1) * 1.5);
+		var sizey = (c.height - 200) / (((this.height + 1) * 1.5));
+		var size = sizex < sizey? sizex:sizey;
 		for(var i = 0; i < this.width; i ++){
 			for(var j = 0; j < this.height; j ++){
 				var x, y;
