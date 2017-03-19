@@ -75,6 +75,10 @@ $(function(){
 	coordsC.push("Lime");
 	addSpawnerLocation(17.373867, 78.482229);	// Hyderia
 	coordsC.push("Darkblue");
+	addSpawnerLocation(2.572483, -71.964158);	// Colombia
+	coordsC.push("Purple");
+	addSpawnerLocation(68.086395, -44.155433);	// Colombia
+	coordsC.push("White");
 	
 	
 	landmap.draw();
