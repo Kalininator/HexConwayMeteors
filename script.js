@@ -25,9 +25,9 @@ $(function(){
 	addSpawnerLocation(-23.550443, -46.633423);	// Sao Paulo
 	addSpawnerLocation(55.755881, 37.617143);	// Moscow 
 	addSpawnerLocation(51.507341, -0.127671);	// London
-	addSpawnerLocation(31.230391, 121.473707);	// Shanghai
+	addSpawnerLocation(31.222411, 121.113542);	// Shanghai
 	addSpawnerLocation(24.714856, 46.674914);	// Riyadh 
-	addSpawnerLocation(-33.775871, 150.833999);	// Sydney
+	addSpawnerLocation(-31.589728, 142.840452);	// Adalade
 	addSpawnerLocation(43.737470, -79.371324);	// Toronto
 	
 	landmap.draw();
