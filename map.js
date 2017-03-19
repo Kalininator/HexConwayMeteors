@@ -8,7 +8,7 @@ function Map(width, height,landmap){
 		this.cells[i] = new Array(height);
 		this.nCount[i] = new Array(height);
 		for(var j = 0; j < height; j ++){
-			this.cells[i][j] = new Cell();
+			this.cells[i][j] = new Cell(i,j);
 		}
 	}
 	

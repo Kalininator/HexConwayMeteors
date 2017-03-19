@@ -1,5 +1,7 @@
-function Cell(){
+function Cell(x,y){
 	this.colors = ["Red", "Yellow", "Magenta", "Lime", "Aqua"];
+	this.x = x;
+	this.y = y;
 	//this.color = this.colors[getRandomInt(0,4)];
 	
 	this.alive = false;

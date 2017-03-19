@@ -11,7 +11,7 @@ $(function(){
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
-	var i = 200;
+	var i = 100;
 	
 	
 
