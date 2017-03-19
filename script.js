@@ -11,7 +11,7 @@ $(function(){
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
-	var i = 100;
+	var i = 200;
 	
 	
 
@@ -25,10 +25,11 @@ $(function(){
 	addSpawnerLocation(-23.550443, -46.633423);	// Sao Paulo
 	addSpawnerLocation(55.755881, 37.617143);	// Moscow 
 	addSpawnerLocation(51.507341, -0.127671);	// London
-	addSpawnerLocation(31.222411, 121.113542);	// Shanghai
+	addSpawnerLocation(40.468118, 116.004065);	// Beijing
 	addSpawnerLocation(24.714856, 46.674914);	// Riyadh 
 	addSpawnerLocation(-31.589728, 142.840452);	// Adalade
-	addSpawnerLocation(43.737470, -79.371324);	// Toronto
+	addSpawnerLocation(53.541925, -113.491206);	// Edmonton
+	addSpawnerLocation(6.605115, 20.656842);	// Central African Republic
 	
 	landmap.draw();
 	map.draw();
