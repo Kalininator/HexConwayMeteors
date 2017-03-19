@@ -46,6 +46,8 @@ function meteorStrike(x,y){
 	var size = (window.innerWidth ) / ((map.width + 1) * 1.5);
 	var x = Math.round((2 * x) / (3 * size));
 	var y = Math.round(y / (size * Math.sqrt(3)));
+	x = x < 0? map.width + x:x % map.width;
+	
 	// console.log("strike at " + x + "," + y);
 	var neighbours = checkNeighbour(x,y);
 	map.cells[x][y].alive = false;
