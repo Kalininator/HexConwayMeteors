@@ -8,7 +8,7 @@ var gridwidth, gridheight;
 var hexsize;
 var currentYear = 1900;
 var tick = 0;
-var tickMaxMeteor = 5;
+var tickMaxMeteor = 4;
 
 $(function(){
 	//init
@@ -127,6 +127,9 @@ function loop(){
 	if(tick == tickMaxMeteor){
 		getMeteors(currentYear);
 		currentYear++;
+		if(currentYear == 2013){
+			currentYear = 1900;
+		}
 		tick = 0;
 	}else{
 		tick ++;
