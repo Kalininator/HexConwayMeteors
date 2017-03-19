@@ -18,7 +18,7 @@ $(function(){
 	$("#bottom").height = 200;
 	$("#main").width = window.innerWidth;
 	$("#main").height = window.innerHeight - 200;
-	var i = 100;
+	var i = 125;
 	c = $("#canvas")[0];
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
