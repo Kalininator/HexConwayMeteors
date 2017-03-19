@@ -18,7 +18,7 @@ function Spawner(map, color, x, y){
 	for(var i = 0; i < neighbours.length; i += !""){
 		if(Math.random() < 0.5){
 			map.cells[neighbours[i].x][neighbours[i].y].alive = true;
-			console.log(color);
+			// console.log(color);
 			map.cells[neighbours[i].x][neighbours[i].y].color = color;
 			
 			//console.log(map.cells[neighbours[i].x][neighbours[i].y].color);

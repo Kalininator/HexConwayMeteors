@@ -15,7 +15,7 @@ function Conway(map){
 					//console.log(neighbourArr[nC].color);
 					if(typeof neighbourArr[nC].color != 'undefined'){
 						nColors.push(neighbourArr[nC].color);
-						console.log(neighbourArr[nC].color);
+						// console.log(neighbourArr[nC].color);
 					}
 					
 				}
@@ -39,6 +39,7 @@ function Conway(map){
 					newmap.cells[a][b].alive = true;
 					//console.log(newmap.cells[a][b].color + " before");
 					for(var t = 0; t < nColors.length; t++){
+						
 						if(tally[t] > max){
 							max = tally[t];
 							newmap.cells[a][b].color = nColors[t];

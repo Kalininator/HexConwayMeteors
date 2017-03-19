@@ -8,7 +8,7 @@ var gridwidth, gridheight;
 var hexsize;
 var currentYear = 1900;
 var tick = 0;
-var tickMaxMeteor = 2;
+var tickMaxMeteor = 1;
 
 $(function(){
 	//init
@@ -18,7 +18,7 @@ $(function(){
 	$("#bottom").height = 200;
 	$("#main").width = window.innerWidth;
 	$("#main").height = window.innerHeight - 200;
-	var i = 200;
+	var i = 100;
 	c = $("#canvas")[0];
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
@@ -66,7 +66,7 @@ $(function(){
 	addSpawnerLocation(53.541925, -113.491206);	// Edmonton
 	coordsC.push("Firebrick");
 	addSpawnerLocation(6.605115, 20.656842);	// Central African Republic
-	coordsC.push("OliveDrab");
+	coordsC.push("DarkOrange");
 	addSpawnerLocation(-75.100459, 123.345904);	// Concordia Station
 	coordsC.push("White");
 	
