@@ -52,11 +52,11 @@ function meteorStrike(x,y){
 	killgrid[x][y] = 1;
 	for(var i = 0; i < neighbours.length; i += !""){
 		killgrid[neighbours[i].x][neighbours[i].y] = 1;
-		// var dudes = checkNeighbour(neighbours[i].x,neighbours[i].y);
-		// for(var j = 0; j < dudes.length; j += !""){
-			// killgrid[dudes[j].x][dudes[j].y] = 1;
+		var dudes = checkNeighbour(neighbours[i].x,neighbours[i].y);
+		for(var j = 0; j < dudes.length; j += !""){
+			killgrid[dudes[j].x][dudes[j].y] = 1;
 			// map.landmap.cells[dudes[j].x][dudes[j].y] = false;
-		// }
+		}
 	}
 	
 }
