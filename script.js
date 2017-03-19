@@ -1,9 +1,10 @@
 var c, ctx;
-var WIDTH, HEIGHT;
+
 var map,landmap,killgrid;
 var coords = [];
 var FPS = 4;
-
+var gridwidth, gridheight;
+var hexsize;
 var currentYear = 1900;
 var tick = 0;
 var tickMaxMeteor = 2;
@@ -16,18 +17,29 @@ $(function(){
 	$("#bottom").height = 200;
 	$("#main").width = window.innerWidth;
 	$("#main").height = window.innerHeight - 200;
-	
+	var i = 200;
 	c = $("#canvas")[0];
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
-	console.log(window.innerHeight);
 	c.height = window.innerHeight - 200;
-	console.log(c.height);
-	var i = 200;
-
+	
+	
+	
 	
 	landmap = new LandMap(Math.round(i * 2.3),i);
 	map = new Map(Math.round(i * 2.3),i,landmap);
+	
+	if(c.width > 2 * c.height){
+		//too wide
+		hexsize = c.height / ((map.height + 1) * Math.sqrt(3));
+	}else{
+		//too high
+		hexsize = (2 * c.width) / (3 * map.width + 1);
+	}
+	
+	gridheight = hexsize * Math.sqrt(3) * (map.height + 1);
+	gridwidth = hexsize * 1.5 * map.width;
+	
 	killgrid = new Array(map.width);
 	for(var i = 0; i < killgrid.length; i += !""){
 		killgrid[i] = new Array(map.height);
@@ -74,9 +86,10 @@ function addSpawnerLocation(lat,lng){
 	var coord = coordView(lat, lng);
 	coord.x = Math.round(coord.x);
 	coord.y = Math.round(coord.y);
-	var size = (window.innerWidth ) / ((map.width + 1) * 1.5);
+	var size = hexsize;
 	coord.x = Math.round((2 * coord.x) / (3 * size));
 	coord.y = Math.round(coord.y / (size * Math.sqrt(3)));
+	// console.log(coord);
 	coords.push(coord);
 }
 
@@ -92,6 +105,7 @@ function loop(){
 	
 	
 	for(var i = 0; i < coords.length; i += !""){
+		// console.log(coords[i]);
 		Spawner(map, "White", coords[i].x, coords[i].y);
 	}
 	
@@ -132,12 +146,13 @@ function loop(){
 }
 
 function coordView(lat,lng){
-	var screenX = ((lng + 180) * (c.width  / 360));
-	var screenY = (((lat * -1) + 90) * ((Math.sqrt(3) * ((c.width ) / ((map.width + 1) * 1.5)) * map.height)/ 180));
+	// var width = (c.width) / ((this.width + 1) * 1.5) * map.width * 1.5;
+	var screenX = Math.round((lng + 180) * (gridwidth  / 360));
+	var screenY = Math.round(((lat * -1) + 90) * (gridheight/ 180));
 	
-	screenX = screenX < 0? c.width + screenX : screenX % c.width;
-	screenY = screenY < 0? c.height + screenY : screenY % c.height;
-	
+	screenX = screenX < 0? gridwidth + screenX : screenX % gridwidth;
+	screenY = screenY < 0? gridheight + screenY : screenY % gridheight;
+	// killgrid[Math.round(screenX)][Math.round(screenY)] = 1;
 	return {x:Math.round(screenX),y:Math.round(screenY)};
 }
 
