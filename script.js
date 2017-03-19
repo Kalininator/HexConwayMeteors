@@ -161,7 +161,7 @@ function loop(){
 			y += size;
 			x += size;
 			if(killgrid[i][j]){
-				ctx.fillStyle = "rgba(228, 153, 47, 1)";
+				ctx.fillStyle = "Red";
 				drawHex(size,x,y,1);
 			}
 			
