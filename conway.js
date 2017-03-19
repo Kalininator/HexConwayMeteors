@@ -4,7 +4,10 @@ function Conway(map){
 	
 	for(var a = 0; a < map.width; a++){
 		for(var b = 0; b < map.height; b++){
-			
+			// console.log(map.landmap.cells[a][b]);
+			if(map.landmap.cells[a][b] == 0){
+				continue;
+			}
 			var neighbourArr = checkNeighbour(a,b);
 			var nColors = [];
 			var nCount = 0; //alive neighbour count

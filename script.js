@@ -3,7 +3,7 @@ var c, ctx;
 var map,landmap,killgrid;
 var coords = [];
 var coordsC = []
-var FPS = 1.5;
+var FPS = 6;
 var gridwidth, gridheight;
 var hexsize;
 var currentYear = 1900;
