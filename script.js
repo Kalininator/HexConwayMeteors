@@ -30,6 +30,7 @@ $(function(){
 	addSpawnerLocation(-31.589728, 142.840452);	// Adalade
 	addSpawnerLocation(53.541925, -113.491206);	// Edmonton
 	addSpawnerLocation(6.605115, 20.656842);	// Central African Republic
+	addSpawnerLocation(-75.100459, 123.345904);	// Concordia Station
 	
 	landmap.draw();
 	map.draw();
