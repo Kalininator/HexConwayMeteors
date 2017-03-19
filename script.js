@@ -1,14 +1,15 @@
 var c, ctx;
+var canvas;
 var WIDTH, HEIGHT;
 var map,landmap,killgrid;
 var coords = [];
 var FPS = 3;
+var scene, camera, renderer, globe;
 $(function(){
 	//init
 	
 	
-	
-	c = $("#canvas")[0];
+	c = document.createElement('canvas');
 	ctx = c.getContext("2d");
 	c.width = window.innerWidth;
 	c.height = window.innerHeight;
@@ -46,8 +47,36 @@ $(function(){
 		meteorStrike(mousePos.x,mousePos.y);
     }, false);
 	
+	var image = new Image();
+	image.id = "pic"
+	image.src = c.toDataURL();
+	//document.getElementById('image-for-crop').appendChild(image);
+	
+	scene = new THREE.Scene();
+
+	camera = new THREE.PerspectiveCamera(45, c.width / c.height, 0.01, 1000);
+	camera.position.z = 1.5;
+
+	renderer = new THREE.WebGLRenderer();
+	renderer.setSize(c.width, c.height);
+	scene.add(new THREE.AmbientLight(0x333333));
+
+	var light = new THREE.DirectionalLight(0xffffff, 1);
+	light.position.set(5,3,5);
+	scene.add(light);
+	globe = new THREE.Mesh(
+		  new THREE.SphereGeometry(0.5, 32, 32),
+		  new THREE.MeshPhongMaterial({
+			map: THREE.ImageUtils.loadTexture(c.toDataURL()),
+			specular: new THREE.Color('grey')      })
+	);
+	scene.add(globe);
+	render();
 	setInterval(loop,1000/FPS);
 });
+function render() {
+  renderer.render(scene, camera);
+}
 
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
@@ -104,7 +133,11 @@ function loop(){
 	for(var i = 0; i < killgrid.length; i += !""){
 		killgrid[i].fill(0);
 	}
-	
+	var image = new Image();
+	image.id = "pic"
+	image.src = c.toDataURL();
+	// $("#image-for-crop").empty();
+	// document.getElementById('image-for-crop').appendChild(image);
 	// window.setTimeout(loop,1000);
 }
 
