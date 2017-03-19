@@ -1,10 +1,10 @@
-function Cell(x,y){
-	this.colors = ["Red", "Yellow", "Magenta", "Lime", "Aqua"];
+function Cell(x,y,c, bol){
+	this.colors = ["aqua", "white", "Lime", "Red", "DeepSkyBlue", "Purple", "Linen", "Darkblue", "Firebrick", "DarkOrange", "White"];
 	this.x = x;
 	this.y = y;
 	//this.color = this.colors[getRandomInt(0,4)];
-	
-	this.alive = false;
+	this.color = this.colors[c];
+	this.alive = bol;
 	
 	/*
 	if(Math.random() < 0.2){

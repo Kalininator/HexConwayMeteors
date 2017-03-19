@@ -8,7 +8,7 @@ function Map(width, height,landmap){
 		this.cells[i] = new Array(height);
 		this.nCount[i] = new Array(height);
 		for(var j = 0; j < height; j ++){
-			this.cells[i][j] = new Cell(i,j);
+			this.cells[i][j] = new Cell(i,j, 3, false);
 		}
 	}
 	
@@ -32,7 +32,9 @@ Map.prototype = {
 				//ctx.fillStyle = "rgb(" + this.cells[i][j].r + "," + this.cells[i][j].g + "," + this.cells[i][j].b + ")"
 				if(this.cells[i][j].alive && this.landmap.cells[i][j]){
 					// ctx.fillStyle = this.cells[i][j].color;
-					ctx.fillStyle = "white";
+					ctx.fillStyle = this.cells[i][j].color;
+					
+					//ctx.fillStyle = "white";
 					drawHex(hexsize,x,y,0.7);
 				}
 				

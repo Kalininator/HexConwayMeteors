@@ -13,10 +13,15 @@ function Spawner(map, color, x, y){
 		// console.log(map.cells[ax][ay].color);
 	// }
 	var neighbours = checkNeighbour(x,y);
-	
+	//console.log(color);
+
 	for(var i = 0; i < neighbours.length; i += !""){
 		if(Math.random() < 0.5){
 			map.cells[neighbours[i].x][neighbours[i].y].alive = true;
+			console.log(color);
+			map.cells[neighbours[i].x][neighbours[i].y].color = color;
+			
+			//console.log(map.cells[neighbours[i].x][neighbours[i].y].color);
 		}
 	}
 	
