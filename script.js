@@ -40,7 +40,7 @@ $(function(){
 	
 	gridheight = hexsize * Math.sqrt(3) * (map.height + 1);
 	gridwidth = hexsize * 1.5 * map.width;
-	
+	c.width = gridwidth;
 	killgrid = new Array(map.width);
 	for(var i = 0; i < killgrid.length; i += !""){
 		killgrid[i] = new Array(map.height);
