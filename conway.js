@@ -38,7 +38,7 @@ function Conway(map){
 			if(killgrid[a][b]){
 				newmap.cells[a][b].alive = false;
 			}else{
-				if((nCount ==2) && map.landmap.cells[a][b] == 1){
+				if((nCount == 2) && map.landmap.cells[a][b] == 1){
 					newmap.cells[a][b].alive = true;
 					//console.log(newmap.cells[a][b].color + " before");
 					for(var t = 0; t < nColors.length; t++){
