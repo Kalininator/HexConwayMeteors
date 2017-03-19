@@ -67,11 +67,9 @@ function loop(){
 	
 	
 	ctx.clearRect(0,0,c.width,c.height);
+	console.log("draw");
 	landmap.draw();
-	
-	map.draw();
-	
-	
+	map.draw();	
 }
 
 function coordView(lat,lng){
