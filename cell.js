@@ -1,5 +1,5 @@
 function Cell(){
-	this.colors = ["Crimson", "Gold", "LightSalmon", "MediumSlateBlue", "AliceBlue"];
+	this.colors = ["Red", "Yellow", "Magenta", "Lime", "Aqua"];
 	//this.color = this.colors[getRandomInt(0,4)];
 	
 	this.alive = false;
