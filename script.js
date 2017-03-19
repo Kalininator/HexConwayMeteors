@@ -50,24 +50,24 @@ function addSpawnerLocation(lat,lng){
 }
 
 function loop(){
-	
+	map = Conway(map);
 	//console.log("tick");
 	
 	// console.log(map.width);
 	// console.log(map.width - coord.x);
 	
 	for(var i = 0; i < coords.length; i += !""){
-		map.cells[coords[i].x][coords[i].y].alive = true;
-		var c = map.cells[coords[i].x][coords[i].y].colors[getRandomInt(0,4)];
+		// map.cells[coords[i].x][coords[i].y].alive = true;
+		// var c = map.cells[coords[i].x][coords[i].y].colors[getRandomInt(0,4)];
 		//map.cells[coords[i].x][coords[i].y].color = c;
-		Spawner(map, c, coords[i].x, coords[i].y);
+		Spawner(map, "White", coords[i].x, coords[i].y);
 	}
 	
-	map = Conway(map);
 	
-	for(var i = 0; i < coords.length; i += !""){
-		map.cells[coords[i].x,coords[i].y].alive = true;
-	}
+	
+	// for(var i = 0; i < coords.length; i += !""){
+		// map.cells[coords[i].x,coords[i].y].alive = true;
+	// }
 	
 	
 	ctx.clearRect(0,0,c.width,c.height);

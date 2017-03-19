@@ -58,22 +58,24 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function checkNeighbour(x1, y1){
-	var adjacent = new Array(6);
-	var counter = 0;
+
+function checkNeighbour(x, y){
+
+	var adjacent = [];
 	
-	for(var a = x1-1; a <= x1+1; a++){
-		for(var b = y1-1; b <= y1+1; b++){
-			if(!(a == x1-1 && b == y1+1)||!(a == x1 && y1 == b)||!(a == x1+1 && b == y1-1)){
-				//console.log(a + "," + (map.width));
-				//console.log(a%(map.width));
-				//console.log(a >= 0 ? a % map.width : map.width + a);
-				adjacent[counter] = map.cells[a >= 0 ? a % map.width : map.width + a][b >= 0 ? b % map.height : map.height + b];
-				counter++;
-			}
-		}
+	adjacent.push(map.cells[x][(y - 1) < 0? map.height + (y - 1) : (y - 1) % map.height]);
+	adjacent.push(map.cells[x][(y + 1) % map.height]);
+	adjacent.push(map.cells[(x-1) < 0? map.width + (x-1) : (x-1) % map.width][y]);
+	adjacent.push(map.cells[(x+1) % map.width][y]);
+	
+	if(x % 2 == 0){
+		adjacent.push(map.cells[(x-1) < 0? map.width + (x-1) : (x-1) % map.width][(y - 1) < 0? map.height + (y - 1) : (y - 1) % map.height]);
+		adjacent.push(map.cells[(x+1) % map.width][(y - 1) < 0? map.height + (y - 1) : (y - 1) % map.height]);
+	}else{
+		adjacent.push(map.cells[(x-1) < 0? map.width + (x-1) : (x-1) % map.width][(y + 1) % map.height]);
+		adjacent.push(map.cells[(x+1) % map.width][(y + 1) % map.height]);
 	}
-	
-	return adjacent;
+	return adjacent;	
 }
+
 
